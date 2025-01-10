@@ -24,7 +24,8 @@ jobs:
             fail-build: false
             severity-cutoff: high
             acs-report-unable: true
-        
+        - name: Change to project directory
+          run: cd catalog-service
         - name: Upload vulnerability report
           uses: github/codeql-action/upload-sarif@v2
           if: success() || failure()
